@@ -1,0 +1,22 @@
+# Desinstalar WSL en Windows
+
+Listado de las distribuciones instaladas en WSL
+wsl -l
+
+Desinstalación de las distribuciones
+wsl --unregister NombreDistribución
+
+Eliminar distribuciones desde Microsoft Store
+Get-AppxPackage | Where-Object {$_.Name -like "*nombre_para_buscar*"}
+Get-AppxPackage NombreDelPaquete | Remove-AppxPackage
+
+Desinstalación del paquete WSL
+wsl --uninstall
+
+Desactivar las funciones relacionadas con WSL
+dism.exe /online /disable-feature /featurename:Microsoft-Windows-Subsystem-Linux /norestart
+dism.exe /online /disable-feature /featurename:VirtualMachinePlatform /norestart
+
+
+Source:
+https://www.youtube.com/watch?v=nZ8gBIE81zs 
